@@ -9,7 +9,7 @@ from pyrogram.types.list import List
 ####################  Mdisk  ####################
 
 async def get_mdisk(link):
-	url = 'https://diskuploader.mypowerdisk.com/v1/tp/cp'
+	url = 'https://Mdiskshortner.link/v1/tp/cp'
 	param = {'token': MDISK_API, 'link': link
 			 }
 	res = requests.post(url, json=param)
@@ -22,7 +22,7 @@ async def get_mdisk(link):
 
 
 async def replace_mdisk_link(text):
-	links = re.findall(r'https?://mdisk.me[^\s]+', text)
+	links = re.findall(r'https?://mdiskshortner.link/[^\s]+', text)
 	for link in links:
 		try:
 			mdisk_link = await get_mdisk(link)
